@@ -33,8 +33,8 @@ Route::middleware('auth')->group(function () {
     route::get('/', [usercontroller::class, 'redirect'], 'redirect')->name('redirect');
     route::get('/home', [usercontroller::class, 'user'], 'user')->name('user');
     route::get('/get_qrcode', [usercontroller::class, 'get_qrcode'], 'get_qrcode')->name('get_qrcode'); 
-    route::get("{uuid}/add_attendance", [usercontroller::class, 'add_attendance'], 'add_attendance')->name('add_attendance');
-    route::get("/update_attendance", [usercontroller::class, 'update_attendance'], 'update_attendance')->name('update_attendance');
+    route::get("/add_attendance", [adminController::class, 'add_attendance'], 'add_attendance')->name('add_attendance');
+    route::get("/update_attendance", [adminController::class, 'update_attendance'], 'update_attendance')->name('update_attendance');
     
     // Route::get('/generate-qrcode', [QrCodeController::class, 'index']);
 });
@@ -64,3 +64,7 @@ Route::middleware('authadmin', 'auth')->group(function () {
 
 
 
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
