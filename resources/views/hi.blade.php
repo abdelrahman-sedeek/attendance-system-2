@@ -11,7 +11,8 @@
 <body>
     <div class="container all ">
         <div class="container-fluid  bg-light">
-
+        </div>
+       
             <nav class="container  navbar  ms-auto">
               <a class="navbar-brand" href="#">Sticky top</a>
               @if (Route::has('login'))
@@ -31,6 +32,11 @@
             </nav>
             </div>
         </div>
+        @if (session()->has('message'))
+        <div class="alert alert-success" role="alert">
+            {{session()->get('message')}}
+        </div>
+        @endif
       <section class="container">
           
           
@@ -58,82 +64,26 @@
                 
                
             
-                @foreach ($user as $user)
+                @foreach ($user as $users)
                 
                <tr>
                 
-                <td class="col text-center">{{$user->attendence_status}}</td>
-                <td class="col text-center">{{$user->attendence_time}}</td>
-                <td class="col text-center">{{$user->leave_time}}</td>
-                <td class="col text-center">{{$user->User->name}}</td>
+                <td class="col text-center">{{$users->attendence_status}}</td>
+                <td class="col text-center">{{$users->attendence_time}}</td>
+                <td class="col text-center">{{$users->leave_time}}</td>
+                <td class="col text-center">{{$users->User->name}}</td>
                 {{-- <td class="col text-center">{{$user->name}}</td> --}}
                 <td class="col text-center">{{$counter}}</td>
-            
             </tr>
+            <?php$counter++?>
+
             @endforeach
             
             
         </tbody>
         </table>
-      </div>
-        @if (session()->has('message'))
-                <div class="alert alert-success" role="alert">
-                    {{session()->get('message')}}
-                </div>
-                @endif
-        <div class="attendance_btn align-content-center text-center m-5 ">
-            
-              
-                <button type="submit" class="btn btn-danger attend_btn" data-bs-toggle="modal" data-bs-target="#qr_modal">تسجيل حضور</button>
-                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#qr__leave_modal">تسجيل انصراف</button>
-            
-            <div class="modal fade" tabindex="-1"id="qr_modal">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">امسح الكود</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" >
-                        <div class="card-body">
-                          
-                            {!! QrCode::size(300)->generate(route("add_attendance")) !!}
-                        </div>
-                    @php
-                        echo route("add_attendance");
-                    @endphp
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal fade" tabindex="-1"id="qr__leave_modal">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">امسح الكود</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" >
-                        <div class="card-body">
-                            {!! QrCode::size(300)->generate(route("update_attendance")) !!}
-                        </div>
-                    @php
-                        echo route("update_attendance");
-                    @endphp
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-          
+    
+       
   
       <div class="add_emp_btn text-center m-3">
         <button class="btn btn-danger"  data-bs-toggle="modal" type="submit" data-bs-target="#addEmp-modal">اضافة موظف</button>
@@ -180,7 +130,8 @@
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             
             </div>
-          </name
+          </name>
+          <input type="text" id="random"  hidden>
         </div>
       </div>
     
@@ -188,6 +139,7 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script>
+
   function change_uuid(){
     // $uuid=crypto.randomUUID();
     // $.ajax({
@@ -221,21 +173,34 @@
     //   //   }
     //   // }
     // });
-    $('.attend_btn').click( { 
+    // $('.attend_btn').click( { 
       
-      $.get("/get_qrcode",function ($qr) {
+    //   $.get("/add_attendance",function ($qr) {
             
 
-        },
+    //     },
         
-      );
+    //   );
       
-    });
-
+    // });
+    
+  //   .$.ajax({
+  //       alter(rand);
+  //       type: "get",
+  //       url: "/random_qr/"+rand,
+  //       data: "data",
+  //       dataType: "dataType",
+  //       success: function (response) {
+          
+  //       }
+  //     });
   }
   
-  console.log('hi')
-  let interval=1;
-  setInterval(change_uuid(), 10000);
+  // let rand=document.getElementById('random').value;
+  // let att_card=document.getElementById('attendance_card').value;
+  // console.log(att_card);
+  // let interval=1;
+  // setInterval(rand, 10000);
+  //   console.log(rand)
 </script>
 </html>

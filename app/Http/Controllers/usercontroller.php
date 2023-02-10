@@ -23,17 +23,31 @@ class usercontroller extends Controller
     {
         return view('auth.login');
     }
+   
     public function get_qrcode(qr_code $id)
     {
-        $frist=$id->id;
-        $uuid=qr_code::where('id',1)->get();
-        dd($uuid);
+        // $frist=$id->id;
+        $uuid=qr_code::find(1);
+     
         $uuid->qr_code = Str::uuid()->toString();
         
-        return response()->json($frist);
+        // return response()->json($frist);
     }
-    
-   
+    public function update_qrcode()
+    {
+        
+        $uuid=qr_code::where('id',1);
+        $uuid->qr_code = Str::uuid()->toString();
+
+        $uuid->update([
+            'qr_code'=>$uuid->qr_code,
+        ]);
+         return redirect()->back();
+    }
+    public function user()
+    {
+        return view('user.home');
+    }
     
     public function redirect()
     {
@@ -42,16 +56,18 @@ class usercontroller extends Controller
         {
             return redirect()->route('admin');
         }
+        elseif(Auth::user()->user_type=='2')
+        {
+            return redirect()->route('mod');
+            
+        }
         else
         {
             return redirect()->route('user');
-            
+
         }
     }
-    public function user()
-    {
-        return view('user.home');
-    }
+   
 
     /**
      * Show the form for creating a new resource.
