@@ -50,25 +50,13 @@ class adminController extends Controller
     }
     public function add_attendance($uuid)
     {
-        // $frist=qr_code::where('id',1)->get('qr_code');
-        //  $qr= $uuid->id=1;
-        //  $uuid=$qr->qr_code;
         
        $qr= qr_code::find(1);
        
        
-        //  URL::defaults(['uuid' => $qr]);
+      
          $attend = new attendance();
-        // URL::("add_attendance/{hi}");
-        // for ($count = 1; $count < 100;$count++)
-        // {
-        //     // $uuid->qr_code = Str::uuid()->toString();
-            
-        // }
         
-        // $uuid->qr_code_user_pivot->user_id = Auth::user()->id;
-        // $uuid->save();
-        // $id = Auth::user()->id;
         if($qr->qr_code==$uuid)
             {
                 attendance::updateOrCreate([
@@ -77,7 +65,7 @@ class adminController extends Controller
                     'attendence_time'=> Carbon::now()->addHour(),
                     'leave_time'=>null
                 ]);
-                return 'تم تسجيل الحضور';  
+                return '<h1>تم تسجيل الحضور</h1>';  
             }
             else
             {
@@ -85,22 +73,25 @@ class adminController extends Controller
                 
             }
       }
-    public function update_attendance()
+    public function update_attendance($uuid)
     {
         
+        $qr= qr_code::find(1);
+        if($qr->qr_code==$uuid)
+        {
+            $update = attendance::where('user_id',Auth::user()->id);
+            $update->update([
+                'attendence_status' => 'انصراف',
+    
+                'leave_time' => Carbon::now()->addHour(),
+    
+            ]);
+
+            return "<h1>تم تسجيل الانصراف</h1>";  
+        }
        
         
        
-        $update = attendance::where('user_id',Auth::user()->id);
-        $update->update([
-            'attendence_status' => 'انصراف',
-
-            'leave_time' => Carbon::now()->addHour(),
-
-        ]);
-        
-       
-        return redirect()->back()->with('message', 'تم تسجيل الانصراف');  
       }
 
     public function add_employee(Request $request)

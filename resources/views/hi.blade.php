@@ -57,15 +57,17 @@
         </thead>
         <tbody>
             
-               <?php
-                $counter=1; 
-                $state="حاضر";
-                ?>
                 
                
             
+          <?php
+          $counter=1; 
+          
+          ?>
+         
                 @foreach ($user as $users)
-                
+               
+               
                <tr>
                 
                 <td class="col text-center">{{$users->attendence_status}}</td>
@@ -73,9 +75,9 @@
                 <td class="col text-center">{{$users->leave_time}}</td>
                 <td class="col text-center">{{$users->User->name}}</td>
                 {{-- <td class="col text-center">{{$user->name}}</td> --}}
-                <td class="col text-center">{{$counter}}</td>
+                <td class="col text-center">{{$counter++}}</td>
             </tr>
-            <?php$counter++?>
+           
 
             @endforeach
             
@@ -84,56 +86,57 @@
         </table>
     
        
-  
+       
       <div class="add_emp_btn text-center m-3">
         <button class="btn btn-danger"  data-bs-toggle="modal" type="submit" data-bs-target="#addEmp-modal">اضافة موظف</button>
       </div>
-      <div class="modal fade" tabindex="-1"id="addEmp-modal">
+      <div class="modal add_emp_btn" id="addEmp-modal" tabindex="-1">
         <div class="modal-dialog">
-          <name class="modal-content">
+          <div class="modal-content" style="background-color: #fff">
             <div class="modal-header">
-              <h5 class="modal-title">اضافة موظف </h5>
+              <h5 class="modal-title">Modal title</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" >
-                <div class="card-body ">
-                    <form action="{{route('add_employee')}}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label float-end text-end">الاسم</label>
-                          <input type="text" class="form-control" name="name" >
-                          
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label float-end text-end">البريد</label>
-                          <input type="email" class="form-control"  name="email" aria-describedby="emailHelp" >
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label float-end text-end">كلمه السر</label>
-                          <input type="password" class="form-control" name="password">
-                        </div>
-                        <label  class="form-label float-end text-end">اختر الصلاحية</label>
-                        <div class="mb-3">
-                            <select id="Select" name="user_type"class="form-select">
-                                <option value="0">موظف</option>
-                                <option value="1">مسؤل</option>
-                              </select>
-                            
-
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </form>
-                </div>
-          
-            </div>
-            <div class="modal-footer">
+              <div class="card-body ">
+                  <form action="{{route('add_employee')}}" method="POST">
+                      @csrf
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label float-end text-end">الاسم</label>
+                        <input type="text" class="form-control" name="name" >
+                        
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label float-end text-end">البريد</label>
+                        <input type="email" class="form-control"  name="email" value=" " >
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label float-end text-end">كلمه السر</label>
+                        <input type="password" class="form-control" name="password">
+                      </div>
+                      <label  class="form-label float-end text-end">اختر الصلاحية</label>
+                      <div class="mb-3">
+                          <select id="Select" name="user_type"class="form-select">
+                              <option value="0">موظف</option>
+                              <option value="1">مسؤول</option>
+                              <option value="2">حساب الرمز</option>
+                            </select>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+              </div>
+        
+          </div>
+          <div class="modal-footer">
+           
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            
+              
             </div>
-          </name>
-          <input type="text" id="random"  hidden>
+          </div>
         </div>
       </div>
+
+   
     
 </div>
 </body>

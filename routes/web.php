@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
     route::get('/get_qrcode', [usercontroller::class, 'get_qrcode'], 'get_qrcode')->name('get_qrcode'); 
     route::get('/update_qrcode', [usercontroller::class, 'update_qrcode'], 'update_qrcode')->name('update_qrcode'); 
     route::get("/add_attendance/{uuid}", [adminController::class, 'add_attendance'], 'add_attendance')->name('add_attendance');
-    route::get("/update_attendance", [adminController::class, 'update_attendance'], 'update_attendance')->name('update_attendance');
+    route::get("/update_attendance/{uuid}", [adminController::class, 'update_attendance'], 'update_attendance')->name('update_attendance');
     // Route::get('/generate-qrcode', [QrCodeController::class, 'index']);
 });
 
