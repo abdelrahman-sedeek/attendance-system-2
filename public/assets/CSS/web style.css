@@ -1,0 +1,661 @@
+*
+{
+
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    
+}
+body
+{
+    overflow-x: hidden;
+}
+
+/* background-color: azure; */
+.main
+{
+    background-color: #f7f9fe;
+    margin: auto;
+    /* margin-bottom: 50px; */
+    align-items: center;
+    
+}
+.MainSection
+{
+    
+    
+    margin: auto;
+    width: 80%;
+    
+}
+
+nav
+{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    
+    
+}
+.background
+{
+    top: 50px;
+    right: -50px;
+    width: 100%;
+    position: absolute;
+}
+ /* start of nav bar */
+
+.navBar
+{  
+    position: fixed;
+    z-index: 111111;
+    text-align: center;
+    align-items: center;
+    padding: auto;    
+    width: 100%;
+ }
+
+ .logo
+ {
+     
+    font-size: 30px;
+ }
+.logo .logoTxt
+{
+    color: #243d68;
+    font-weight: bold;
+}
+.logo .logoNumber
+{
+    font-weight: bold;
+color: #4c6ca3;
+
+/* margin-right: 10px; */
+}
+.logo img
+{
+    width: 35px;
+    height: 35px;
+}
+
+li a
+{
+    /* margin: 10px; */
+    text-decoration: none;
+}
+ul li
+{
+    margin-left: 15px;
+    list-style: none;
+    
+}
+#navBtn
+{
+    position: relative;
+    right: -10px;
+    font-weight: 700;
+    border-radius: 45px;
+}
+.active_nav
+{
+    
+    background-color:#fff;
+    border:  1px #6a6780;
+} 
+/* end of nav bar */
+/* --------------------------------------------------------------------- */
+/* start of MainSection */
+
+.MainSection .row .image img
+{
+    position: relative;
+    margin-top: 70px;
+    right: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.header
+{   
+    display: flex;
+    position: relative;
+    top: 70px;
+    text-transform:uppercase;
+    color: #243d68;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    
+   
+}
+
+#bigWord h1
+{
+    font-weight: 500;
+    font-size: 100px;
+    
+}
+.smallWord span
+{
+    font-size: 50px;
+    font-weight: 900;
+    display: flex;
+    justify-content:space-between;
+    flex-direction: column;
+}
+#redWord
+{
+    font-size: 50px;
+    position: relative;
+    bottom: -10px;
+    left: -20px;
+    margin-bottom: 40px;
+    color: #ff4d5d;
+
+}
+.text
+{
+    position: relative;
+    top: 80px;
+}
+.buttons i
+{
+    padding: 10px;
+}
+.buttons .btn
+{
+    
+    border-radius: 50px;
+}
+.buttons a
+{
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+    right: -70px;
+}
+.statics
+{
+    position: relative;
+    top: 120px;
+    font-family:'Roboto', sans-serif;
+    
+}
+.statics p
+{
+    font-weight: 400;
+    color: #cdcbdc;
+}
+.statics span
+{
+    font-weight: 900;
+    /* color:#243d68 ;  */
+}
+
+
+
+
+
+/* end of main secrion */
+/* --------------------------------------------------------------------- */
+/* start of secend section */
+.secendSection
+{
+    
+    width: 80%;
+    align-items: center;
+    margin: auto;
+   
+    margin-top: 70px;
+    background-color: #ffffff96;
+}
+
+
+.secendSectionList ul
+{
+    padding:0;
+    position: relative;
+    top: 50px;
+    left: 70px;
+    width: 80%;
+    box-shadow:  5px 5px 5px #e9eafe;
+    border:1px solid #bbcae2;
+}
+.secendSectionList li
+{
+    list-style: none;
+    /* text-decoration: none; */
+    border: 1px solid #bbcae2;
+    border-left: none;
+    border-top:none ;
+    padding: 15px;
+    
+}
+.secendSectionList ul li a i{
+    position: absolute;
+    right: 15px;
+   
+}
+.secendSection .list-group a,.secendSection .list-group.List_header
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    padding: 20px;
+}
+/* end of secend section */
+/* ******************************************* */
+/* start of 3rd section */
+.headerTxt
+{
+    margin-bottom: 100px;
+}
+.thirdContainer
+{
+    background-color: #f7f9fe;
+
+}
+.thirdSection,.FourthSection,.fifthSection
+{
+    padding-bottom:120px ;
+    position: relative;
+    top:100px;
+    text-align: center;
+    margin: auto;
+    width: 80%;
+   
+}
+
+.thirdSection h1 ,.FourthSection h1,.fifthContiner h1{
+    color: #243d68;  
+}
+.thirdSection h5, hr,.FourthSection h5,.fifthContiner h5
+{
+    color: #5fa0ef;
+}
+.thirdSection  img{
+    border-bottom:5px solid #5fa0ef;
+}
+/* end of third sction */
+/* ************************************************** */
+/* start of forth section */
+.forurthImg
+{
+    position: absolute;
+    right: 10px;
+    top: -40px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+.fourthCard
+{
+    margin-bottom: 50px;
+    box-shadow:  2px 2px 2px 2px #e9eafe;
+    
+}
+.fourthCard .card-body 
+{
+    text-align: left;
+}
+.footer
+{
+    margin-top: 70px;
+}
+
+.message 
+{
+    display: flex;
+    justify-content: space-between;
+}
+.message .icon i{
+    font-size: 2.75rem;
+}
+.message p b,.message .icon i
+{
+    color: #7fb3f2;
+    
+}
+.footerBtn button
+{
+    border-radius: 50px;
+    
+}
+/* end of forth sction */
+/* ************************************************** */
+/* start of fifth section */
+.fifthContiner
+{
+    
+    background-color: #f7f9fe;
+    
+}
+.fifthSection
+{
+    width: 80%;
+    margin: auto;
+}
+.fifthContiner.cards
+{
+    padding: auto;
+    text-align: center;
+    
+}
+.fifthImg
+{
+    
+    margin: auto;
+    
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    box-shadow:  2px 2px 2px 2px #e9eafe;
+}
+.fifthSection .cards b
+{
+    color: #54576d;
+}
+.fifthSectionFooter
+{
+ margin-top: 50px;    
+}
+.fifthSectionFooter a
+{
+    margin-left: 50px;
+    text-decoration: none;
+    
+}
+.fifthSectionFooter  button
+{
+    border-radius: 50px;
+    
+}
+
+.advices
+{
+    margin: auto;
+    margin-top:50px ;
+    text-align: left;
+    background-color: white;
+    padding-bottom: 15px;
+    box-shadow:  2px 2px 2px 2px #e9eafe;
+}
+
+.advices .text 
+{
+    padding-left: 25px;
+    margin-bottom:60px ; 
+}
+
+.advices .text ul
+{
+    padding-left: 0px;
+} 
+.advices .text li 
+{
+    line-height: 1.75;
+    list-style: none;   
+    
+}
+.advices .text li i 
+{
+    color: rgb(51, 173, 51);
+}
+.advices .image{
+   
+   
+    text-align: center;
+
+}
+.advices .image img
+{
+    width: 250px;
+    height: 80vh;
+}
+.last_card 
+{   
+    padding-top: 70px;
+    
+}
+.last_card .card
+{
+    padding-top:50px ;
+    padding: auto ;
+    text-align: center ;
+    align-items: center ;
+
+}
+
+/* end of fifth sction */
+/* ************************************************** */
+/* start of sixthSection (blue section) section */
+
+.blueSection
+{   background: url(../imgs/shape-a.png);
+    background-color: #2766bb;
+    color: white;
+    position: relative;
+}
+
+.bj2
+{
+ z-index: -1;
+ background-repeat: no-repeat;
+ background-position: 50% 50%;
+ background-size: 100%;
+}
+.blueSection .secendContent{
+    text-align: center;
+    align-items: center;
+}
+.blueSection .secendContent span
+{
+    color: #73e3ff;
+
+}
+
+.blueSection .secendContent h2
+{
+    font-family: fantasy;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+img
+{
+    width: 100%;
+    height: 100%;
+}
+.blueSection .secendSection.content
+{
+    
+}
+.blueSection .secendSection
+{
+   
+    background-color: #1b47a1;
+  
+ 
+}
+/* end of sixthSection (blue section) sction */
+/* ************************************************** */
+/* start of seventh section */
+.seventhContainer .text
+{
+    text-align: center;
+}
+.seventhContainer .text h5{
+    
+    letter-spacing: 3px;
+}
+.seventhContainer .crossCard,.rightCard
+{
+    display: flex;
+   text-align: center;
+   align-items: center;
+    
+    
+}
+.seventhContainer .CardImg img
+{
+    margin-bottom: 20px;
+    background:white;
+    width: 60%;
+    border-radius:100% ;
+    
+}
+.rightCard .CardImg
+{
+    position: relative;
+}
+.rightCard i
+{
+    position: absolute;
+    color: #3dca93;
+    right: 30px;
+    z-index: 1;
+    
+    
+}
+.crossCard .CardImg
+{
+    position: relative;
+}
+.crossCard i
+{
+    position: absolute;
+    color: #f86168;
+    right: 33px;
+    z-index: 1;
+
+}
+.crossCard img
+{
+    
+    border: 1px solid #f86168;
+}
+.rightCard  img 
+{
+    border: 1px solid #3dca93;
+    
+}
+.sec11 {
+    background-color: #f7f9fe;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+
+.sec11 h6 {
+    color: #3185eb;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sec11 h1 {
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.sec11-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sec11 .card-bs {
+    padding: 30px;
+    background-color: white;
+}
+
+.sec11 #center-card {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* .sec11 .card-bs:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    cursor: pointer;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+} */
+
+.sec12 {
+    background-image: url(../imgs/shape-a.png);
+    background-color: #151c2e;
+    padding-top: 100px;
+    padding-bottom: 90px;
+    color: #e3e9e9;
+}
+
+.sec12-logo {
+    margin-bottom: 20px;
+}
+
+.sec12-logo h3 {
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.sec12-logo span {
+    color: #1b47a1;
+}
+
+.sec12-logo i {
+    color: red;
+}
+
+.sec12-links a {
+    color: whitesmoke;
+}
+
+.sec12-btns {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.sec12-btns a {
+    color: whitesmoke;
+    margin-right: 20px;
+}
+
+.sec12 .fb-btn {
+    background-color: #3b5999;
+    padding: 20px;
+}
+
+.sec12 .tw-btn {
+    background-color: #55acee;
+    padding: 20px;
+}
+
+.sec12 .insta-btn {
+    background-color: #e4405f;
+    padding: 20px;
+}
+
+.sec12-links h6 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.sec12-links {
+    display: flex;
+}
+
+.sec12-links div {
+    margin-right: 100px;
+}
+
+.sec12-links a {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.sec12-end {
+    font-size: 14px;
+}
+
+.sec12-end span {
+    font-weight: bold;
+}
