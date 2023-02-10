@@ -6,10 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    <title>Document</title>
+    <title>QR code</title>
 </head>
 <body>
-    
+    <div class="container-fluid  bg-light">
+    </div>
+   
+        <nav class="container  navbar  ms-auto">
+          <a class="navbar-brand" href="#">Sticky top</a>
+          @if (Route::has('login'))
+                      
+          <div class="user-area dropdown float-right ">
+              <form action="{{ route('logout') }}" method="POST">
+                  @csrf
+                  
+                  <a class="nav-link p-1" href="{{ route('logout') }}"
+                  onclick="event.preventDefault(); this.closest('form').submit();"> Logout</a>
+                  
+              </form>
+          </div>
+          
+          @endif
+          
+        </nav>
+        </div>
+    </div>
     <div class="attendance_btn align-content-center text-center m-5 ">
             
               
